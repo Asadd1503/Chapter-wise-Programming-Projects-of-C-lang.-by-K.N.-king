@@ -1,3 +1,10 @@
+
+/* ( CRAPS GAME. )
+ * 1) we roll two dices if their sum is 2,3 or 11 we lose
+ * 2) if sum is 7 or 12 we win any result other then these become point
+ * 3) we keep rolling dices until point again comes in that case we win ,
+ * during this if 7 comes bfore point then we lose */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -29,7 +36,8 @@ int main(void){
     printf("per win 10$\t\tper lose $10\n\nyou earned: %hd$\t\tyou lost: %hd$\n\ntotal profit: %hd$\n\n",win*10,lose*10, win*10 - lose*10);
 
 }
-bool playgame(void){
+bool playgame(void){                          /*working: calls roll_dice() function and determine
+                                               *on the base of result if we have won or lose */
     int one_time_only = 0;
     int point;
     again_call : 
@@ -66,7 +74,7 @@ bool playgame(void){
 
 
 }
-int roll_dice(void){
+int roll_dice(void){               /*working: generates random number b/w 1 and 6 and return their sum */
     int dice1, dice2;
     
 
